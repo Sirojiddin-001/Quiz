@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Quiz</title>
+	<meta charset="utf-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="styles/app.css">
+	<link rel="stylesheet" href="./styles/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="card text-center main" id="intro">
+		<span class="card-header text-left info">
+			Тест №1
+		</span>
+		<div class="card-body">
+			<h5 class="card-title">Количество вопросов - 10</h5>
+			<p class="card-text">Количество попыток - бесконечно</p>
+		</div>
+		<div class="card-footer text-muted">
+			<button id="start" class="btn btn-primary">Начать</button>
+		</div>
+	</div>
+
+	<div id="quiz" class="card text-left main">
+
+		<div class="card-header">
+			<span id="info" class="mt-0 float-left info"></span>
+			<div class="footer__content float-right" id="pages">0 / 0</div>
+		</div>
+
+		<div class="card-body">
+			<h6 class="mt-0" id="head"></h6>
+			<div class="buttons">
+				<div class="buttons__content btn-group-vertical" id="buttons"></div>
+			</div>
+		</div>
+
+		<div class="card-footer text-muted">
+			<button id="next" class="btn btn-primary float-right">Далее</button>
+			<button id="rest" class="btn btn-success" style="display: none;">Повторить</button>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="scripts/app.js"></script>
+
+</body>
+
+</html>

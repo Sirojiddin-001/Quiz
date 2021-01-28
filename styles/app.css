@@ -1,0 +1,24 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+}
+.main {
+  width: 100vw;
+  max-width: 600px !important;
+}
+
+.btn {
+  text-align: left !important;
+}
+.info {
+  font-weight: 600;
+  font-size: larger;
+}
+#quiz {
+  display: none;
+}
+.buttons__content {
+  width: 100%;
+}
