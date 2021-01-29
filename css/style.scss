@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
-
+html {
+  height: -webkit-fill-available;
+}
 body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   margin: 0;
   padding: 0;
   * {
@@ -37,6 +41,7 @@ body {
   width: 600px;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
+  min-height: -webkit-fill-available;
   border: 1px solid rgb(235, 235, 235);
   transition: 0.25s ease-in-out;
   .quiz_card_header {
