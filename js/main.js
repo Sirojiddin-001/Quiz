@@ -1,11 +1,8 @@
 import { render, QS, QSA } from "./render.js";
 import { cards } from "./cards.js";
 import { quiz } from "./quiz.js";
-window.addEventListener("resize", () => {
-  document
-    .querySelector(":root")
-    .style.setProperty("--vh", window.innerHeight / 100 + "px");
-});
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
 cards.map((card) =>
   render("div", {
     class:
