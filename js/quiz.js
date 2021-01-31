@@ -69,6 +69,7 @@ export function quiz(data) {
     QS("#next_button").removeAttribute("disabled");
   }
   QS("#start_button").addEventListener("click", function (e) {
+    shuffle(data);
     this.style.display = "none";
     QS("#quit_button").style.display = "none";
     QS("#select_button").style.display = "flex";
@@ -89,12 +90,13 @@ export function quiz(data) {
     current = 0;
     score = 0;
     selected = 0;
-    init(data);
+    shuffle(data);
     QS("#next_button").innerHTML = "Далее";
     QS("#select_button").style.display = "flex";
     QS("#next_button").style.display = "flex";
     QS("#repeat_button").style.display = "none";
     QS("#quit_button").style.display = "none";
+    init(data);
   });
   QS("#quit_button").addEventListener("click", function () {
     current = 0;
@@ -109,5 +111,21 @@ export function quiz(data) {
     Количество вопросов - 10 <br>
     Количество попыток - бесконечно
     `;
+    shuffle(data);
   });
+  function shuffle(array) {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  }
 }
