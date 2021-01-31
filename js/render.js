@@ -8,7 +8,7 @@ export function render(type, config) {
     Object.keys(config.style).forEach((style) => {
       element.style[style] = config.style[style];
     });
-  config.textContent && (element.innerHTML = config.textContent);
+  config.textContent && (element.textContent = config.textContent);
   config.id && (element.id = config.id);
   config.class && (element.className = config.class);
   config.handlers &&
