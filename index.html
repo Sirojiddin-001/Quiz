@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./css/uikit.css">
   <script src="./js/uikit.min.js"></script>
   <script src="./js/uikit-icons.min.js"></script>
- 
+
 </head>
 
 <body>
@@ -131,31 +131,31 @@
       </div>
     </div>
   </div>
-  <footer>
-		<h2>Контактная форма</h2>
-		<div class="form-container">
-			<div class="note"></div>
-			<div class="fields">
-				<form class="ajax-contact-form" action="">
-					<p><input type="text" name="name" value="" placeholder="Имя"></p>
-					<div class="row">
-						<div class="col"><input type="tel" name="tel" value="" placeholder="Телефон"></div>
-						<div class="col"><input type="email" name="email" value="" placeholder="E-mail"></div>
-						</div>
-					<label>Текст</label>
-					<textarea name="message" cols="40" rows="3"></textarea>
-					<input type="submit" name="submit" class="form-container__btn" value="Отправить">
-				</form>
-			</div>
-		</div>
-  </footer>
-  <script
-  src="https://code.jquery.com/jquery-1.12.4.js"
-  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-  crossorigin="anonymous"></script>
-	<script src="./js/contactform.js"></script>
+
+  <div data-form-type="formoid" style="display: none;">
+    <form action="" method="POST" data-form-title="Form Name">
+      <input type="hidden" name="email" data-form-email="true"
+        value="hMpUZ5/6lEUff4iKnn2JffAPLqqUclVzAtC1L0rE7P9KCF1md96A0iUH7EZPyaX5NQfCcShuaDZXrCsnpzPYzauz2LqiU1BAoBJMCTiQk/jDHhcx+UKkY8W8KdB5M04l">
+      <div>
+        <div data-for="name">
+          <input id="nameInput" type="text" name="name" placeholder="Имя" data-form-field="name" value="">
+        </div>
+        <div data-for="email">
+          <input id="emailInput" type="email" name="email" placeholder="E-mail" data-form-field="email" value="">
+        </div>
+
+        <div data-for="textarea">
+          <textarea id="textInput"  name="textarea" placeholder="Сообщение" data-form-field="textarea"></textarea>
+        </div>
+        <button id="sendBtn" type="submit">Отправить</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/formoid.min.js"></script>
   <script type="module" src="./js/main.js"></script>
-  <script type="module" src="./js/quiz.min.js"></script>
+  <script type="module" src="./js/quiz.js"></script>
 </body>
 
 </html>
