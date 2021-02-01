@@ -1,5 +1,5 @@
-import { render } from "./render.js";
-import { cards } from "./cards.js";
+import { render } from "./render.min.js";
+import { cards } from "./cards.min.js";
 let quiz;
 let quiz_num;
 cards.map((card, i) =>
