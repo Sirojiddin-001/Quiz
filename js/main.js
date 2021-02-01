@@ -1,41 +1,28 @@
-import { render, QS, QSA } from "./render.js";
-import { cards } from "./cards.js";
-import { quiz } from "./quiz.js";
-
-cards.map((card) =>
-  render("div", {
-    class:
-      "card uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-large",
-    handlers: {
-      click: function (e) {
-        quiz(card.data);
-        QS(".full").style.display = "flex";
-        QS("#quiz_info").innerHTML = card.title;
-      },
-    },
-    appendTo: "#app",
-    appendIn: [
-      render("div", {
-        class: "uk-card-media-top",
-        appendIn: [
-          render("img", {
-            class: "card-media",
-            attr: {
-              src: "./assets/image.jpg",
-              alt: "",
-            },
-          }),
-          render("div", {
-            class: "uk-card-body",
-            appendIn: [
-              render("h3", {
-                class: "uk-card-title text-center",
-                textContent: card.title,
-              }),
-            ],
-          }),
-        ],
-      }),
-    ],
-  })
-);
+import { userImg, userInfo, load } from "./user-info.js";
+window.onload = function () {
+  setTimeout(function () {
+    document.body.classList.add("loaded");
+  }, 3000);
+  setTimeout(function () {
+    if (localStorage.getItem("infoData") == null) {
+      console.log(localStorage.getItem("infoData"));
+      document.getElementById("user-click").click();
+    }
+  }, 3500);
+};
+document.querySelector("#continue").addEventListener("click", (e) => {
+  userInfo("#user-name", ".user-login");
+  let email = document.querySelector("#user-email").value;
+  localStorage.setItem("userEmail", email);
+});
+load(".user-img", ".user-login", "#form-info");
+document.querySelector("#save").addEventListener("click", (e) => {
+  userImg("#form-img", ".user-img");
+  userInfo("#form-info", ".user-login");
+  UIkit.notification({
+    message: "<span uk-icon='icon: check'></span> Сохранено",
+    status: "success",
+    pos: "bottom-right",
+    timeout: 3000,
+  });
+});
