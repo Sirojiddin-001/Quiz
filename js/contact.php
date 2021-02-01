@@ -58,7 +58,7 @@ $message1 ="\n\nИмя: ".$name."\n\nТелефон: " .$tel."\n\nE-mail: " .$em
 
 $header = "Content-Type: text/plain; charset=utf-8\n";
 
-$header .= "From: Новая заявка <example@gmail.com>\n\n";	
+$header .= "From: Новая заявка <rixsiboyev001@gmail.com>\n\n";	
 $mail = mail("rixsiboyev001@gmail.com", $subject1, iconv ('utf-8', 'windows-1251', $message1), iconv ('utf-8', 'windows-1251', $header));
 
 if($mail)

@@ -5,7 +5,7 @@ var str = $(this).serialize();
 
 $.ajax({
 type: "POST",
-url: "https://http://customquiz.netlify.app/js/contact.php",
+url: "https://customquiz.netlify.app/js/contact.php",
 data: str,
 success: function(msg) {
 if(msg == 'OK') {
