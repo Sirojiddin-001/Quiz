@@ -1,5 +1,5 @@
 import { render } from "./render.min.js";
-import { cards } from "./cards.min.js";
+import { cards } from "./cards.js";
 let quiz;
 let quiz_num;
 cards.map((card, i) =>
@@ -163,17 +163,30 @@ function Next() {
   if (quiz.current < quiz.question.length - 1) {
     quiz.current++;
     Init();
-    console.log("object :>> ", quiz.current);
   } else if (quiz.current == quiz.question.length - 1) {
     Verify();
+    let repeat_num;
+    if (localStorage.getItem("Quiz repeat " + quiz_num) != null) {
+      repeat_num =
+        parseInt(localStorage.getItem("Quiz repeat " + quiz_num)) - 1;
+    } else {
+      repeat_num = quiz.repeat - 1;
+    }
     document.getElementById("nameInput").value = localStorage.getItem(
       "infoData"
     );
     document.getElementById("emailInput").value = localStorage.getItem(
       "userEmail"
     );
-    document.getElementById("textInput").value = "Тест №" + (quiz_num+1) + " набрано " + quiz.score + " баллов";
-    document.getElementById("sendBtn").click(); 
+    document.getElementById("textInput").value =
+      "Тест №" +
+      (quiz_num + 1) +
+      " набрано " +
+      quiz.score +
+      " баллов, осталось " +
+      repeat_num +
+      " попыток !";
+    document.getElementById("sendBtn").click();
     if (localStorage.getItem("Quiz repeat " + quiz_num) != null) {
       quiz.repeat = parseInt(localStorage.getItem("Quiz repeat " + quiz_num));
       quiz.repeat--;
@@ -181,7 +194,6 @@ function Next() {
       repeatBtn.innerHTML =
         "Повторить | " + localStorage.getItem("Quiz repeat " + quiz_num);
     } else {
-      
       quiz.repeat--;
       localStorage.setItem("Quiz repeat " + quiz_num, quiz.repeat);
       repeatBtn.innerHTML =

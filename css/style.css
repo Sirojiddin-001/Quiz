@@ -188,7 +188,7 @@ body * {
 .card {
   margin: 10px !important;
   min-width: 280px;
-  padding: 0 !important;
+  padding: 0px !important;
   transition: 0.25s ease-in-out;
   margin-bottom: 30px !important;
   cursor: pointer;
