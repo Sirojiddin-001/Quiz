@@ -110,6 +110,9 @@ body {
       font-size: 15px;
       font-weight: 600;
       text-align: justify;
+      &::selection{
+        display: none;
+      }
     }
     .quiz_card_buttons_group {
       display: grid;
