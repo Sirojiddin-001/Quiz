@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body * {
@@ -496,4 +497,8 @@ body * {
 
 .no-js h1 {
   color: #222222;
+}
+
+.loaded {
+  overflow: auto !important;
 }
