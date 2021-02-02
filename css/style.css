@@ -500,5 +500,5 @@ body * {
 }
 
 .loaded {
-  overflow: auto !important;
+  overflow: auto;
 }
