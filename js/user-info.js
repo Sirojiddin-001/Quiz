@@ -39,6 +39,8 @@ export function userInfo(infoForm, infoSection) {
     console.log("ERROR");
   }
   info.innerHTML = localStorage.getItem("infoData");
+  let email = document.querySelector("#form-email").value;
+  localStorage.setItem("userEmail", email);
 }
 
 export function load(imag, inf, finf) {
@@ -52,4 +54,5 @@ export function load(imag, inf, finf) {
   }
   info.innerHTML = localStorage.getItem("infoData");
   forinf.value = localStorage.getItem("infoData");
+  QS('#form-email').value = localStorage.getItem("userEmail");
 }

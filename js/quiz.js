@@ -166,29 +166,22 @@ function Next() {
     console.log("object :>> ", quiz.current);
   } else if (quiz.current == quiz.question.length - 1) {
     Verify();
+    document.getElementById("nameInput").value = localStorage.getItem(
+      "infoData"
+    );
+    document.getElementById("emailInput").value = localStorage.getItem(
+      "userEmail"
+    );
+    document.getElementById("textInput").value = "Тест №" + (quiz_num+1) + " набрано " + quiz.score + " баллов";
+    document.getElementById("sendBtn").click(); 
     if (localStorage.getItem("Quiz repeat " + quiz_num) != null) {
-      document.getElementById("nameInput").value = localStorage.getItem(
-        "infoData"
-      );
-      document.getElementById("emailInput").value = localStorage.getItem(
-        "userEmail"
-      );
-      document.getElementById("textInput").value = "Тест №" + (quiz_num+1) + " набрано " + quiz.score + " баллов";
-      document.getElementById("sendBtn").click();  
       quiz.repeat = parseInt(localStorage.getItem("Quiz repeat " + quiz_num));
       quiz.repeat--;
       localStorage.setItem("Quiz repeat " + quiz_num, quiz.repeat);
       repeatBtn.innerHTML =
         "Повторить | " + localStorage.getItem("Quiz repeat " + quiz_num);
     } else {
-      document.getElementById("nameInput").value = localStorage.getItem(
-        "infoData"
-      );
-      document.getElementById("emailInput").value = localStorage.getItem(
-        "userEmail"
-      );
-      document.getElementById("textInput").value = "Тест №" + (quiz_num+1) + " набрано " + quiz.score + " баллов";
-      document.getElementById("sendBtn").click();  
+      
       quiz.repeat--;
       localStorage.setItem("Quiz repeat " + quiz_num, quiz.repeat);
       repeatBtn.innerHTML =

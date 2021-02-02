@@ -1,4 +1,4 @@
-import { userImg, userInfo, load } from "./user-info.min.js";
+import { userImg, userInfo, load } from "./user-info.js";
 window.onload = function () {
   setTimeout(function () {
     document.body.classList.add("loaded");
