@@ -122,10 +122,6 @@ body * {
   text-align: justify;
 }
 
-.quiz_card .quiz_card_body .quiz_card_question::selection {
-  display: none;
-}
-
 .quiz_card .quiz_card_body .quiz_card_buttons_group {
   display: grid;
 }
@@ -505,4 +501,9 @@ body * {
 
 .loaded {
   overflow: auto;
+}
+
+::selection {
+  display: none !important;
+  visibility: hidden;
 }

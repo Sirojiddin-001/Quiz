@@ -8,6 +8,7 @@ body {
     font-family: "Roboto Condensed", sans-serif;
   }
 }
+
 .navbar {
   position: fixed;
   width: 100vw;
@@ -110,9 +111,6 @@ body {
       font-size: 15px;
       font-weight: 600;
       text-align: justify;
-      &::selection{
-        display: none;
-      }
     }
     .quiz_card_buttons_group {
       display: grid;
@@ -438,6 +436,10 @@ body {
 .no-js h1 {
   color: #222222;
 }
-.loaded{
-  overflow: auto ;
+.loaded {
+  overflow: auto;
+}
+::selection {
+  display: none !important;
+  visibility: hidden;
 }
