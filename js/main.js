@@ -14,6 +14,7 @@ document.querySelector("#continue").addEventListener("click", (e) => {
   userInfo("#user-name", ".user-login");
   let email = document.querySelector("#user-email").value;
   localStorage.setItem("userEmail", email);
+  load(".user-img", ".user-login", "#form-info");
 });
 load(".user-img", ".user-login", "#form-info");
 document.querySelector("#save").addEventListener("click", (e) => {
