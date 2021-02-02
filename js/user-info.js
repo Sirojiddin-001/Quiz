@@ -40,6 +40,7 @@ export function userInfo(infoForm, infoSection) {
   }
   info.innerHTML = localStorage.getItem("infoData");
   let email = document.querySelector("#form-email").value;
+  QS(".user-email").innerHTML = email;
   localStorage.setItem("userEmail", email);
 }
 
@@ -54,5 +55,6 @@ export function load(imag, inf, finf) {
   }
   info.innerHTML = localStorage.getItem("infoData");
   forinf.value = localStorage.getItem("infoData");
-  QS('#form-email').value = localStorage.getItem("userEmail");
+  QS(".user-email").innerHTML = localStorage.getItem("userEmail");
+  QS("#form-email").value = localStorage.getItem("userEmail");
 }
