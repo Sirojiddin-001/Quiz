@@ -57,7 +57,14 @@
         <a class="uk-navbar-item uk-logo" href="##">C++</a>
       </div>
       <div class="nav-overlay uk-navbar-right">
-        <a class="uk-navbar-toggle" uk-icon="icon: download" download href="./assets/Dinshunoslik.pdf"></a>
+        <button class="uk-button uk-button-default" type="button" uk-icon="icon: download"></button>
+        <div uk-dropdown="mode: click">
+          <ul class="uk-nav uk-dropdown-nav">
+            <li> <a href="./assets/Dinshunoslik.pdf">Религиоведение</a></li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="./assets/filosofiya.pdf">Философия</a></li>
+          </ul>
+        </div>
         <span class="uk-navbar-toggle" uk-icon="icon: user" href="#modal-center" uk-toggle></span>
         <span class="uk-navbar-toggle" uk-icon="icon: cog" href="#modal-sections" uk-toggle></span>
       </div>
