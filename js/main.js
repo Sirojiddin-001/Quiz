@@ -2,13 +2,13 @@ import { userImg, userInfo, load } from "./user-info.js";
 window.onload = function () {
   setTimeout(function () {
     document.body.classList.add("loaded");
-  }, 3000);
-  setTimeout(function () {
-    if (localStorage.getItem("infoData") == null) {
-      console.log(localStorage.getItem("infoData"));
-      document.getElementById("user-click").click();
-    }
-  }, 3500);
+  }, 0);
+  // setTimeout(function () {
+  //   if (localStorage.getItem("infoData") == null) {
+  //     console.log(localStorage.getItem("infoData"));
+  //     document.getElementById("user-click").click();
+  //   }
+  // }, 3500);
 };
 document.querySelector("#continue").addEventListener("click", (e) => {
   userInfo("#user-name", ".user-login");
